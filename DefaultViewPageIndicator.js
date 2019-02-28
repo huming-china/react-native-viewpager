@@ -2,6 +2,8 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+var PropTypes = require('prop-types');
+var createReactClass = require('create-react-class');
 var {
   Dimensions,
   StyleSheet,
@@ -46,11 +48,11 @@ var styles = StyleSheet.create({
   },
 });
 
-var DefaultViewPageIndicator = React.createClass({
+var DefaultViewPageIndicator = createReactClass({
   propTypes: {
-    goToPage: React.PropTypes.func,
-    activePage: React.PropTypes.number,
-    pageCount: React.PropTypes.number
+    goToPage: PropTypes.func,
+    activePage: PropTypes.number,
+    pageCount: PropTypes.number
   },
 
   getInitialState() {
@@ -79,10 +81,10 @@ var DefaultViewPageIndicator = React.createClass({
       inputRange: [0, 1], outputRange: [offsetX, offsetX + itemWidth]
     })
 
-    var indicators = [];
-    for (var i = 0; i < pageCount; i++) {
-      indicators.push(this.renderIndicator(i))
-    }
+    // var indicators = [];
+    // for (var i = 0; i < pageCount; i++) {
+    //   indicators.push(this.renderIndicator(i))
+    // }
 
     return (
       <View style={styles.tabs}
@@ -95,8 +97,8 @@ var DefaultViewPageIndicator = React.createClass({
               viewWidth: viewWidth,
             });
           }}>
-        {indicators}
-        <Animated.View style={[styles.curDot, {left}]} />
+        {/* {indicators} */}
+        {/* <Animated.View style={[styles.curDot, {left}]} /> */}
       </View>
     );
   },

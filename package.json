@@ -1,15 +1,73 @@
 {
-  "name": "react-native-viewpager",
-  "version": "0.2.13",
+  "_args": [
+    [
+      {
+        "raw": "react-native-viewpager",
+        "scope": null,
+        "escapedName": "react-native-viewpager",
+        "name": "react-native-viewpager",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\dev\\rn_project\\bce"
+    ]
+  ],
+  "_cnpm_publish_time": 1477545925971,
+  "_from": "react-native-viewpager",
+  "_hasShrinkwrap": false,
+  "_id": "react-native-viewpager@0.2.13",
+  "_location": "/react-native-viewpager",
+  "_nodeVersion": "5.1.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/react-native-viewpager-0.2.13.tgz_1477545918493_0.909252522746101"
+  },
+  "_npmUser": {
+    "name": "race604",
+    "email": "race604@gmail.com"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "react-native-viewpager",
+    "scope": null,
+    "escapedName": "react-native-viewpager",
+    "name": "react-native-viewpager",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/react-native-viewpager/download/react-native-viewpager-0.2.13.tgz",
+  "_shasum": "75e421ae90e89efcd77d2c077c0525382b7c39c5",
+  "_shrinkwrap": null,
+  "_spec": "react-native-viewpager",
+  "_where": "C:\\dev\\rn_project\\bce",
+  "author": {
+    "name": "Race604"
+  },
+  "bugs": {
+    "url": "https://github.com/race604/react-native-viewpager/issues"
+  },
+  "dependencies": {
+    "react-timer-mixin": "^0.13.3",
+    "warning": "^2.1.0"
+  },
   "description": "ViewPager componnent for React Native",
-  "main": "ViewPager.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "75e421ae90e89efcd77d2c077c0525382b7c39c5",
+    "size": 43071650,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/react-native-viewpager/download/react-native-viewpager-0.2.13.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/race604/react-native-viewpager.git"
-  },
+  "gitHead": "8454ebef26d201672d26429c2113c3e0419118aa",
+  "homepage": "https://github.com/race604/react-native-viewpager#readme",
   "keywords": [
     "react-native-component",
     "react-component",
@@ -19,14 +77,25 @@
     "viewpager",
     "pager"
   ],
-  "author": "Race604",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/race604/react-native-viewpager/issues"
+  "main": "ViewPager.js",
+  "maintainers": [
+    {
+      "name": "race604",
+      "email": "race604@gmail.com"
+    }
+  ],
+  "name": "react-native-viewpager",
+  "optionalDependencies": {},
+  "publish_time": 1477545925971,
+  "readme": "# react-native-viewpager\n\n[![npm version](https://img.shields.io/npm/v/react-native-viewpager.svg?style=flat-square)](https://www.npmjs.com/package/react-native-viewpager)\n[![npm downloads](https://img.shields.io/npm/dm/react-native-viewpager.svg?style=flat-square)](https://www.npmjs.com/package/react-native-viewpager)\n\n\nThis is the `ViewPager` componnent in React Native both for Android and iOS.\nThis is a JavaScript-only implementation of pager for React Native. Like `ListView`,\nthis can render hundreds of pages without performance issue. Better than the one in\nAndroid, this `ViewPager` can **auto play** -- turn page automaticly, **loop** -- make infinite scrolling.\n\n## Demo\n![](./art/demo.jpg)\n![](./art/anim.gif)\n\nDemo project is [here](./Sample).\n\n## Usage\n\n1. Run `npm install react-native-viewpager --save`\n2. Code like this:\n\n```\nvar ViewPager = require('react-native-viewpager');\n<ViewPager\n    dataSource={this.state.dataSource}\n    renderPage={this._renderPage}/>\n```\n\n## More configuration\n\n* **`dataSource`**: this is require to provide pages data,\n* **`renderPage`**: this is require to render page view,\n* **`autoPlay`**: `true` to turn page automatically,\n* **`initialPage`**: to set the index of the first page to load,\n* **`isLoop`**: `true` to run in infinite scroll mode,\n* **`locked`**: `true` to disable touch scroll,\n* **`onChangePage`**: page change callback,\n* **`renderPageIndicator`**: render custom ViewPager indicator.\n* **`initialPage`**: show initially some other page than first page.\n\n## Page Transition Animation Controls\n\n* **`animation`**: function that returns a React Native Animated configuration.\n\nExample:\n```\nvar ViewPager = require('react-native-viewpager');\n<ViewPager\n    dataSource={this.state.dataSource}\n    renderPage={this._renderPage}\n    animation = {(animatedValue, toValue, gestureState) => {\n    // Use the horizontal velocity of the swipe gesture\n    // to affect the length of the transition so the faster you swipe\n    // the faster the pages will transition\n    var velocity = Math.abs(gestureState.vx);\n    var baseDuration = 300;\n    var duration = (velocity > 1) ? 1/velocity * baseDuration : baseDuration;\n\n    return Animated.timing(animatedValue,\n    {\n      toValue: toValue,\n      duration: duration,\n      easing: Easing.out(Easing.exp)\n    });\n  }}\n/>\n```\n\n## Licensed\n\nMIT License\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/race604/react-native-viewpager.git"
   },
-  "homepage": "https://github.com/race604/react-native-viewpager#readme",
-  "dependencies": {
-    "react-timer-mixin": "^0.13.3",
-    "warning": "^2.1.0"
-  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.13"
 }
